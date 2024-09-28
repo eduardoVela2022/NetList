@@ -19,6 +19,9 @@ builder.Services.AddDbContext<StoreContext>(opt =>
 // List item repo service
 builder.Services.AddScoped<IListItemRepository, ListItemRepository>();
 
+// CORS service (You may need to restart VS Code)
+builder.Services.AddCors();
+
 // Identity framework services
 builder.Services.AddAuthorization();
 builder.Services.AddIdentityApiEndpoints<AppUser>().AddEntityFrameworkStores<StoreContext>();
@@ -27,6 +30,9 @@ builder.Services.AddIdentityApiEndpoints<AppUser>().AddEntityFrameworkStores<Sto
 var app = builder.Build();
 
 //[Middleware]
+// CORS middleware (You may need to restart VS Code)
+app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().AllowCredentials().WithOrigins("http://localhost:5173"));
+
 // Controller middleware
 app.MapControllers();
 

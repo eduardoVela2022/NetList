@@ -48,4 +48,12 @@ public class AccountController(SignInManager<AppUser> signInManager) : Controlle
         // Returns no content response
         return NoContent();
     }
+
+    // api/account (GET)
+    [HttpGet]
+    public ActionResult GetAuthState()
+    {
+        // Returns if the user is authenticated or not
+        return Ok(new { IsAuthenticated = User.Identity?.IsAuthenticated ?? false });
+    }
 }
