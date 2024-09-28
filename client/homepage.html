@@ -16,19 +16,24 @@
     <h3>New list item</h3>
     <form>
       <!-- Title -->
-      <label>Title:</label>
-      <input type="text" />
+      <label for="title-input">Title:</label>
+      <input id="title-input" type="text" />
 
       <!-- Description -->
-      <label>Description:</label>
-      <input type="text" />
+      <label for="description-input">Description:</label>
+      <input id="description-input" type="text" />
+
+      <button id="submit-btn" type="submit">Add</button>
     </form>
 
     <!-- List -->
     <h3>Your list:</h3>
-    <ul></ul>
+    <ul id="list"></ul>
 
     <!-- Log out button -->
-    <button type="button">Log out</button>
+    <button id="log-out-btn" type="button">Log out</button>
   </body>
+
+  <!-- Script -->
+  <script src="./js/homepage.js"></script>
 </html>
