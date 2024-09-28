@@ -54,7 +54,7 @@ function SignUp() {
   // View
   return (
     <div>
-      <h3>Sign up</h3>
+      <h2>Sign up</h2>
 
       <form>
         <label>First name:</label>

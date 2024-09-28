@@ -1,5 +1,5 @@
 function ErrorPage() {
-  return <div>Error</div>;
+  return <div>Invalid path!</div>;
 }
 
 export default ErrorPage;

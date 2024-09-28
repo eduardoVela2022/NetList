@@ -23,7 +23,7 @@ function LogIn() {
       password,
     };
 
-    // Login fetch request
+    // Log in fetch request
     await fetch("http://localhost:5000/api/login?useCookies=true", {
       method: "POST",
       body: JSON.stringify(userInfo),
@@ -54,7 +54,7 @@ function LogIn() {
   // View
   return (
     <div>
-      <h3>Log In</h3>
+      <h2>Log In</h2>
 
       <form>
         <label>Email:</label>
