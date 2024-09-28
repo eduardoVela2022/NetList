@@ -1,6 +1,15 @@
 Console commands:
 
-Dotnet: - dotnet new list (View templates) - dotnet new sln (Create new .net solution) - dotnet new webapi -o API -controllers (Create a new .net webapi with controllers) - dotnet new class lib -o Core (Create a new .net class library) - dotnet sln add API (Add project to sln, this is done for webapis and class libraries) - dotnet add reference ../Infrastructure (This is done in the API folder to add a reference, since the API project depends on the Infrastructure one) - dotnet restore (Register projects in sln file) - dotnet build (builds app) - dotnet watch (runs the app, must be done in an API) - dotnet new gitignore (Creates a .gitignorefile)
+Dotnet:
+
+- dotnet new list (View templates)
+- dotnet new sln (Create new .net solution)
+- dotnet new webapi -o API -controllers (Create a new .net webapi with controllers)
+- dotnet new class lib -o Core (Create a new .net class library)
+- dotnet sln add API (Add project to sln, this is done for webapis and class libraries) - dotnet add reference ../Infrastructure (This is done in the API folder to add a reference, since the API project depends on the Infrastructure one)
+- dotnet restore (Register projects in sln file)
+- dotnet build (builds app) - dotnet watch (runs the app, must be done in an API)
+- dotnet new gitignore (Creates a .gitignorefile)
 
 Entity Framework:
 
@@ -17,8 +26,9 @@ Identity framework:
 - (When added add nugget packages and create a new migration to update DB)
 
 Docker:
-docker compose up -d (to create the docker MS SQL server)
-docker compose down (Deletes the containers)
+
+- docker compose up -d (to create the docker MS SQL server)
+- docker compose down (Deletes the containers)
 
 Nuget packages:
 
@@ -52,6 +62,7 @@ Download mkcert package with home-brew
 - mkcert localhost (Create local certificate)
 
 Stripe:
--Get the stripe package for the api
+
+- Get the stripe package for the api
 
 - Get the npm i @stripe/stripe-js for the client
