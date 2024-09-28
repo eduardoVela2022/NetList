@@ -1,5 +1,7 @@
+// Imports
 import { Outlet } from "react-router-dom";
 
+// The app component
 function App() {
   return (
     <>
@@ -8,4 +10,5 @@ function App() {
   );
 }
 
+// Exports
 export default App;

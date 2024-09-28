@@ -1,3 +1,4 @@
+// Imports
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -8,10 +9,12 @@ function LogIn() {
   // Password state
   const [password, setPassword] = useState("Pa$$w0rd");
 
+  // Navigate
   const navigate = useNavigate();
 
-  // Handles the login form's submit event
-  async function handleSubmit(event) {
+  // Handles the login event
+  async function handleLogIn(event) {
+    // Prevents page from reloading
     event.preventDefault();
 
     // Creates an object with the user's information
@@ -68,7 +71,7 @@ function LogIn() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button type="submit" onClick={handleSubmit}>
+        <button type="submit" onClick={handleLogIn}>
           Log in
         </button>
 
