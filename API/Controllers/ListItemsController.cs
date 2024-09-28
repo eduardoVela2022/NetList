@@ -1,6 +1,8 @@
 // Imports
+using API.DTOs;
 using Core.Entities;
 using Core.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // File path
@@ -9,6 +11,7 @@ namespace API.Controllers;
 // List item controller
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class ListItemsController(IListItemRepository repo) : ControllerBase
 {
     // api/listitems (GET)
@@ -21,19 +24,25 @@ public class ListItemsController(IListItemRepository repo) : ControllerBase
 
     // api/listitems (POST)
     [HttpPost]
-    public async Task<ActionResult> CreateListItem(ListItem listItem)
+    public async Task<ActionResult> CreateListItem(ListItemDto listItemDto)
     {
+        var listItem = new ListItem
+        {
+            Title = listItemDto.Title,
+            Description = listItemDto.Description,
+        };
+
         // Add list item
         repo.AddListItem(listItem);
 
         // Save it
         if (await repo.SaveChangesAsync())
         {
-            // Return empty response
+            // Return no content response
             return NoContent();
         }
 
-        // Throw error is it wasn't saved
+        // Throw a bad request if it wasn't saved
         return BadRequest("An error occured while creating a list item");
     }
 }
